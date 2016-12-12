@@ -14,8 +14,9 @@ angular.module('todoApp', [])
 
     }
 
-    todoList.removeTodo = function() {
-
+    todoList.removeTodo = function(index) {
+      todoList.todos.splice(index, 1)
+      console.log('todos:',todoList.todos)
     }
 
 })
