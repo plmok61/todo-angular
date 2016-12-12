@@ -1,0 +1,15 @@
+{
+  "name": "todo-angular",
+  "version": "1.0.0",
+  "author": "TEAManticore",
+  "description": "Simple todo app",
+  "main": "server.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon server/server.js --ignore client/"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {}
+}
