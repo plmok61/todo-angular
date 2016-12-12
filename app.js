@@ -4,9 +4,18 @@ angular.module('todoApp', [])
     todoList.todos = []
 
     todoList.addTodo = function() {
-      todoList.todos.push({text: todoList.todoText, completed: false})
-      todoList.todoText = ''
-      console.log('todos:',todoList.todos)
+      if (todoList.todoText) {
+        todoList.todos.push({text: todoList.todoText, completed: false})
+        todoList.todoText = ''
+        console.log('todos:',todoList.todos)
+      } else {
+        alert('cannot be blank')
+      }
+
+    }
+
+    todoList.removeTodo = function() {
+
     }
 
 })

@@ -21,6 +21,13 @@
             <input class="button" type="submit" value="add">
           </form>
 
+          <ul>
+            <li ng-repeat="todo in todoList.todos">
+              <input type="checkbox" ng-model="todo.completed">
+              <span>{{todo.text}}</span>
+            </li>
+          </ul>
+
         </div>
       </div>
     </body>
