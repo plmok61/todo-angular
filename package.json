@@ -8,6 +8,8 @@
     "start": "./node_modules/.bin/nodemon server/server.js --ignore client/"
   },
   "dependencies": {
+    "angular": "^1.6.0",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "nodemon": "^1.11.0"
   },
