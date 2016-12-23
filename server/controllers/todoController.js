@@ -2,12 +2,12 @@ const db = require('../db')
 const Todo = require('../models/todos')
 const mongoose = require('mongoose')
 
-exports.create = function(req, res) {
-  Todo.create({
-    text: req.body.text,
-    completed: false
-  })
+exports.createTodo = function(req, res) {
+  console.log('Create body',req.body)
+  new Todo({ text: req.body.text, completed: false})
+  .save()
   .then(todo => {
+    console.log('created: ', todo)
     Todo.find(function(err, todos) {
       if (err) {
         res.send(err)
@@ -16,6 +16,7 @@ exports.create = function(req, res) {
     })
   })
   .catch(err => {
+    console.log('Error creating todoooooooooo',err)
     res.send(err)
   })
 }

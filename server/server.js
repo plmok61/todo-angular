@@ -15,7 +15,8 @@ app.use(function(req, res, next) {
   next()
 })
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static(path.resolve(__dirname, '../client')))
 app.use('/', router)
 

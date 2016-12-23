@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-  <html ng-app="todoApp">
-    <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-      <script src="../node_modules/angular/angular.js"></script>
-      <script src="app.js"></script>
-      <link rel="stylesheet" href="app.css">
-    </head>
-    <body>
-      <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter your name here">
-        <h1>Hello {{yourName}}!</h1>
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script><!-- load angular -->
+
+    <script src="app.js"></script>
+    <title>MEANTodo</title>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body ng-controller="mainController">
+    <div>
+      <h2>Todo List</h2>
+      <span>{{ todos.length }}</span>
+      <div ng-repeat="todo in todos">
+        <label>
+            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+        </label>
       </div>
-      <div>
-        <h2>Todo List</h2>
-        <div ng-controller="TodoListController as todoList">
-
-          <form ng-submit="todoList.addTodo()">
-            <input type="text" ng-model="todoList.todoText" size="30"
-               placeholder="add new todo here">
-            <input class="button" type="submit" value="add">
-          </form>
-
-          <ul>
-            <li ng-repeat="todo in todoList.todos">
-              <input type="checkbox" ng-model="todo.completed">
-              <span>{{todo.text}}</span><span ng-click="todoList.removeTodo($index)">delete</span>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </body>
-  </html>
+      <form>
+        <input type="text" placeholder="TODO!" ng-model="formData.text">
+        <button type="submit" ng-click="createTodo()">Add</button>
+      </form>
+      
+    </div>
+  </body>
+</html>

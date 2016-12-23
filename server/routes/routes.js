@@ -7,7 +7,7 @@ router.route('/').get((req,res) => {
 })
 
 
-router.route('/todos').post(todos.create)
+router.route('/todos').post(todos.createTodo)
 
 router.route('/todos').get(todos.getAllTodos)
 
