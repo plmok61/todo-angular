@@ -15,7 +15,7 @@
       <span>{{ todos.length }}</span>
       <div ng-repeat="todo in todos">
         <label>
-            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+          <input type="checkbox" ng-checked="todo.completed" ng-click="completeTodo(todo)"> {{ todo.text }}
         </label>
       </div>
       <form>

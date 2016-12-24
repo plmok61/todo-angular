@@ -18,7 +18,6 @@ todoApp.controller('mainController', ['$scope', '$http', function($scope, $http)
     const data = $scope.formData
     console.log('data: ',data)
 
-    //For some reason this is not sending data
     $http.post('/todos', data)
       .then((response) => {
         $scope.formData = {}
@@ -29,7 +28,14 @@ todoApp.controller('mainController', ['$scope', '$http', function($scope, $http)
       })
   }
 
-  $scope.deleteTodo = function(id) {
+  $scope.completeTodo = function(todo) {
+    console.log('1', todo)
+    todo.completed = !todo.completed
+    console.log('2', todo)
+    $http.put(`/todos/${todo._id}`, todo)
+  }
 
+  $scope.deleteTodo = function(id) {
+    console.log('delete', id)
   }
 }])

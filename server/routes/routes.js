@@ -11,6 +11,8 @@ router.route('/todos').post(todos.createTodo)
 
 router.route('/todos').get(todos.getAllTodos)
 
+router.route('/todos/:id').put(todos.completeTodo)
+
 router.route('/todos/:id').delete(todos.delete)
 
 module.exports = router

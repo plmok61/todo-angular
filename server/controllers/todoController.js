@@ -30,6 +30,17 @@ exports.getAllTodos = function(req, res) {
   })
 }
 
+exports.completeTodo = function(req, res) {
+  console.log('1 request: ',req.body.completed)
+  Todo.findByIdAndUpdate(req.body._id, {$set: req.body})
+  .then(response => {
+    console.log('2 response: ', response.completed)
+  })
+  .catch(err => {
+    console.log('Error updating todo: ', err)
+  })
+}
+
 exports.delete = function(req, res) {
 
 }
