@@ -12,11 +12,11 @@
   <body ng-controller="mainController">
     <div>
       <h2>Todo List</h2>
-      <span>{{ todos.length }}</span>
+      <span>{{ completed }}/{{ todos.length }}</span>
       <div ng-repeat="todo in todos">
         <label>
-          <input type="checkbox" ng-checked="todo.completed" ng-click="completeTodo(todo)"> {{ todo.text }}
-        </label>
+          <input type="checkbox" ng-checked="todo.completed" ng-click="completeTodo(todo)"> {{ todo.text }} 
+        </label><span ng-click="deleteTodo(todo._id)">delete</span>
       </div>
       <form>
         <input type="text" placeholder="TODO!" ng-model="formData.text">

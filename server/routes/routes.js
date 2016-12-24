@@ -13,6 +13,6 @@ router.route('/todos').get(todos.getAllTodos)
 
 router.route('/todos/:id').put(todos.completeTodo)
 
-router.route('/todos/:id').delete(todos.delete)
+router.route('/todos/:id').delete(todos.deleteTodo)
 
 module.exports = router
